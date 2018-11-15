@@ -1,5 +1,5 @@
 const DATA_DEFAULT_STATE = {
-  data: null,
+  data: [],
 }
 
 export default DATA_DEFAULT_STATE

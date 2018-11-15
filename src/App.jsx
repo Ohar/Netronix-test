@@ -1,23 +1,16 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import StreamData from '@/components/StreamData'
+import React from 'react'
 
-class App extends Component {
-  render () {
-    const {data} = this.props
-
-    return (
-      <section>
-        App {data}
-      </section>
-    )
-  }
+export default function App () {
+  return (
+    <main className='App'>
+      <header className='App_header'>
+        App header
+      </header>
+      <StreamData/>
+      <footer className='App_header'>
+        App footer
+      </footer>
+    </main>
+  )
 }
-
-function mapStateToProps (state, ownProps) {
-  return {
-    ...ownProps,
-    data: state.dataState.data
-  }
-}
-
-export default connect(mapStateToProps)(App)
