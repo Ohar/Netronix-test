@@ -1,0 +1,19 @@
+.MeasurementCommon_header {
+  &:before {
+    display: inline-block;
+    width: 1em;
+    margin-right: .5em;
+
+    .MeasurementCommon-BattVoltage & {
+      content: '💡';
+    }
+
+    .MeasurementCommon-Pressure & {
+      content: '🗜';
+    }
+
+    .MeasurementCommon-Temperature & {
+      content: '🌡';
+    }
+  }
+}

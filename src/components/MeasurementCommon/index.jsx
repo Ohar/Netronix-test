@@ -3,18 +3,19 @@ import classNames from 'classnames'
 import React from 'react'
 import './styles.less'
 
-export default function MeasurementTemperature ({measurement: {name, unit, measurements}}) {
+export default function MeasurementCommon ({measurement: {name, unit = '', measurements}}) {
   return (
     <section className={classNames(
-      'MeasurementTemperature',
+      'MeasurementCommon',
+      `MeasurementCommon-${name.replace(/[\s\.]+/g, '')}`,
       {
-        'MeasurementTemperature-empty': !measurements.length,
+        'MeasurementCommon-empty': !measurements.length,
       },
     )}>
-      <header className='MeasurementTemperature_header'>
-        Temperature
+      <header className='MeasurementCommon_header'>
+        {name}
       </header>
-      <div className='MeasurementTemperature_body'>
+      <div className='MeasurementCommon_body'>
         {
           measurements.length
           ? measurements.map(

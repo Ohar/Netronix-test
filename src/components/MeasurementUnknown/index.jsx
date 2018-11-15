@@ -3,7 +3,7 @@ import React from 'react'
 export default function MeasurementUnknown ({measurement}) {
   return (
     <section className='MeasurementUnknown'>
-      MeasurementUnknown
+      Unknown Measurement
       <br/>
       {JSON.stringify(measurement)}
     </section>
