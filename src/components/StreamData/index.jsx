@@ -23,10 +23,10 @@ class StreamData extends Component {
             <ul className='StreamData_list'>
               {
                 measurementList.map(
-                  (measurement, i) => (
+                  measurement => (
                     <li
                       className='StreamData_item'
-                      key={i}
+                      key={measurement._id}
                     >
                       <Measurement measurement={measurement}/>
                     </li>
