@@ -1,6 +1,6 @@
 # What is it?
 
-It is solution of Netronix's [test task](https://github.com/netronixgroup/js-sdk).
+It is solution of Netronix's [test task](https://github.com/netronixgroup/js-sdk/blob/174ca4a41e49366a63d2ab31d884b1b3ed0a6bcb/TestTask.md).
 
 # How to
 
