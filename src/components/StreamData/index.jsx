@@ -1,7 +1,7 @@
 import StreamReader from '@/classes/StreamReader'
 import Measurement from '@/components/Measurement'
 import React, { Component } from 'react'
-import connect from 'react-redux/es/connect/connect'
+import { connect } from 'react-redux'
 
 class StreamData extends Component {
   componentDidMount () {

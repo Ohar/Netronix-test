@@ -1,4 +1,5 @@
 import DateTime from '@/components/DateTime'
+import MeasurementValue from '@/components/MeasurementValue'
 import classNames from 'classnames'
 import React from 'react'
 import './styles.less'
@@ -19,17 +20,11 @@ export default function Measurement ({measurement: {name, unit = '', measurement
         {
           measurements.length
           ? measurements.map(
-            ([ts, value], i) => {
-              const valueText = Array.isArray(value)
-                                ? value.join()
-                                : value
-
-              return (
-                <p key={i}>
-                  <DateTime ts={ts}/> {valueText} {unit}
-                </p>
-              )
-            },
+            ([ts, value], i) => (
+              <p key={i}>
+                <DateTime ts={ts}/> <MeasurementValue name={name} value={value}/> {unit}
+              </p>
+            ),
           )
           : (
             <p>
