@@ -16,7 +16,7 @@ const plugins = {
         port  : process.env.PORT || 3000,
         open  : false,
         server: {
-          baseDir: './',
+          baseDir: './dist',
         },
       },
     ),
