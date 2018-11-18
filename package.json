@@ -1,14 +1,15 @@
 {
   "name": "netronix-test",
+  "description": "Test task for Netronix",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "index.html",
   "repository": "https://github.com/Ohar/Netronix-test.git",
   "author": "Pavel Lysenko <code@ohar.name>",
   "license": "MIT",
   "scripts": {
+    "build": "rimraf ./dist/* && cross-env DEV=false webpack && npm run generate-html && echo 'Builded'",
     "dev": "cross-env DEV=true webpack",
-    "clean": "rimraf ./dist/*",
-    "build": "npm run clean && cross-env DEV=false webpack && echo 'Builded'"
+    "generate-html": "node ./deploy/generate-html.js"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -26,6 +27,7 @@
     "clean-webpack-plugin": "^0.1.16",
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.0",
+    "ejs": "^2.6.1",
     "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "3.0.0",
     "less": "^2.7.1",
