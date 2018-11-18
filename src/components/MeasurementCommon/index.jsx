@@ -19,13 +19,23 @@ export default function MeasurementCommon ({measurement: {name, unit = '', measu
         {
           measurements.length
           ? measurements.map(
-            ([ts, value], i) => (
-              <p key={i}>
-                <DateTime ts={ts}/> {value} {unit}
-              </p>
-            ),
+            ([ts, value], i) => {
+              const valueText = Array.isArray(value)
+                                ? value.join()
+                                : value
+
+              return (
+                <p key={i}>
+                  <DateTime ts={ts}/> {valueText} {unit}
+                </p>
+              )
+            },
           )
-          : 'No data :-('
+          : (
+            <p>
+              No data :-(
+            </p>
+          )
         }
       </div>
     </section>
