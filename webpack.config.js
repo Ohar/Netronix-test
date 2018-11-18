@@ -4,6 +4,8 @@ const BrowserSyncPlugin  = require('browser-sync-webpack-plugin')
 const ExtractTextPlugin  = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
+const {author, name: title, description, repository, version} = require('./package.json')
+
 const __DEV__ = Boolean(JSON.parse(process.env.DEV || 'true'))
 
 const plugins = {
@@ -47,6 +49,7 @@ module.exports = {
     app: [
       'babel-polyfill',
       path.resolve(__dirname, 'src/main.jsx'),
+      path.resolve(__dirname, 'index.ejs'),
     ],
   },
 
@@ -86,6 +89,35 @@ module.exports = {
             },
           ],
         }),
+      },
+      {
+        test: /\.ejs$/,
+        use : [
+          {
+            loader : 'file-loader',
+            options: {
+              name      : '[name].html',
+              context   : './',
+              outputPath: './',
+            },
+          },
+          {
+            loader: 'extract-loader',
+          },
+          {
+            loader: 'ejs-webpack-loader',
+            options: {
+              data: {
+                author,
+                description,
+                repository,
+                title,
+                version,
+              },
+              htmlmin: true,
+            },
+          }
+        ]
       },
     ],
   },
