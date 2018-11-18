@@ -4,7 +4,7 @@ const fs                                                      = require('fs')
 const path                                                    = require('path')
 
 ejs.renderFile(
-  path.resolve(__dirname, './html_template.ejs'),
+  path.resolve(__dirname, './../index.ejs'),
   {
     author,
     description,

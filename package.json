@@ -10,7 +10,7 @@
     "build": "npm run clean && cross-env DEV=false webpack && npm run generate-html && echo 'Builded'",
     "clean": "rimraf ./dist/*",
     "dev": "npm run clean && npm run generate-html && cross-env DEV=true webpack",
-    "generate-html": "node ./deploy/generate-html.js"
+    "generate-html": "node ./build/generate-html.js"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
