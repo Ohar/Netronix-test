@@ -21,4 +21,4 @@ After it you can find application at your [localhost:3000](http://localhost:3000
 
 `npm run build`
 
-After it you can find application files in at your `/dist` directory.
+After it you can find application files in your `/dist` directory.
